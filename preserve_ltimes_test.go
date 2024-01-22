@@ -1,4 +1,4 @@
-//go:build !windows && !plan9 && !js
+//go:build#!windows && !plan9 && !js
 // +build !windows,!plan9,!js
 
 package copy
@@ -33,3 +33,4 @@ func TestOptions_PreserveLTimesErrorReturn(t *testing.T) {
 	Expect(t, err).ToBe(unix.ENOENT)
 	Expect(t, os.IsNotExist(err)).ToBe(true)
 }
+ 
